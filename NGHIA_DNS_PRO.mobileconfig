@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDisplayName</key>
+	<string>NGHIA DNS PRO</string>
+	<key>PayloadDescription</key>
+	<string>NGHIA DNS PRO profile. Uses the Cloudflare Gateway DNS-over-HTTPS endpoint from the supplied original profile; that Gateway endpoint is operated by its owner.</string>
+	<key>PayloadIdentifier</key>
+	<string>vn.nghia.dnspro.profile</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>8B9E011A-D7A6-42A9-ADA0-A32C8B44A941</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://bxb9l1j9j0.cloudflare-gateway.com/dns-query</string>
+			</dict>
+			<key>OnDemandRules</key>
+			<array>
+				<dict>
+					<key>Action</key>
+					<string>EvaluateConnection</string>
+					<key>ActionParameters</key>
+					<array>
+						<dict>
+							<key>DomainAction</key>
+							<string>NeverConnect</string>
+							<key>Domains</key>
+							<array>
+								<string>captive.apple.com</string>
+								<string>3gppnetwork.org</string>
+								<string>dav.orange.fr</string>
+								<string>vvm.mobistar.be</string>
+								<string>vvm.mstore.msg.t-mobile.com</string>
+								<string>tma.vvm.mone.pan-net.eu</string>
+								<string>vvm.ee.co.uk</string>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Action</key>
+					<string>Connect</string>
+				</dict>
+			</array>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadIdentifier</key>
+			<string>vn.nghia.dnspro.cloudflare.dns</string>
+			<key>PayloadUUID</key>
+			<string>83CA7E4E-60E2-41EE-9E96-987F59F2A119</string>
+			<key>PayloadDisplayName</key>
+			<string>NGHIA DNS PRO</string>
+			<key>PayloadOrganization</key>
+			<string>NGHIA DNS</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
