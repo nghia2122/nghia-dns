@@ -1,29 +1,458 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101827">
-<title>NGHIA DNS PRO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>NGHIA DEPTRAI </title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#eef4ff;font-family:Arial,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px}
-main{width:min(620px,100%);background:#121d30;border:1px solid #263750;border-radius:22px;padding:32px;box-shadow:0 18px 60px #0006}
-.logo{width:58px;height:58px;border-radius:17px;background:#1c70ff;display:grid;place-items:center;font-size:29px;margin-bottom:20px}
-h1{font-size:30px;margin:0 0 8px}p{color:#b8c7dc;line-height:1.6}.tag{display:inline-block;background:#173d32;color:#8ef0c0;padding:7px 11px;border-radius:30px;font-size:12px;font-weight:bold}
-a.download{display:block;text-align:center;text-decoration:none;background:#2878ff;color:white;padding:16px;border-radius:12px;font-weight:bold;margin:24px 0}
-.steps{background:#0d1728;border-radius:14px;padding:18px;color:#c8d5e7;line-height:1.8}.small{font-size:12px;color:#8193ac;margin-top:22px}
-</style></head>
-<body><main>
-<div class="logo">🛡️</div>
-<span class="tag">DNS OVER HTTPS · NEXTDNS</span>
-<h1>NGHIA DNS PRO</h1>
-<p>NGHIA DZ.</p>
-<a class="download" href="./NGHIA_DNS.mobileconfig">TẢI CẤU HÌNH DNS</a>
-<div class="steps"><b>Cách cài trên iPhone</b><br>
-1. Mở trang này bằng Safari trên iPhone và tải cấu hình.<br>
-2. Vào Cài đặt → Đã tải về hồ sơ (Profile Downloaded).<br>
-3. Chọn Cài đặt và làm theo hướng dẫn trên màn hình.<br>
-4. Mở lại trang NextDNS để quản lý bộ lọc và xem thống kê.
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d19;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #176bff;
+    filter: blur(180px);
+    opacity: .17;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.container {
+    width: min(850px, 92%);
+    margin: auto;
+}
+
+/* HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: #438aff;
+}
+
+.status {
+    color: #6df0b0;
+    font-size: 11px;
+    background: #102b25;
+    padding: 9px 14px;
+    border-radius: 30px;
+}
+
+/* LOCKET HERO */
+.hero {
+    margin-top: 25px;
+    padding: 45px 30px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #51442b;
+    background:
+        radial-gradient(circle at top, #5c4624 0%, transparent 55%),
+        linear-gradient(145deg,#211e19,#111a29);
+    box-shadow: 0 20px 65px #0005;
+}
+
+.gold-icon {
+    width: 85px;
+    height: 85px;
+    display: grid;
+    place-items: center;
+    font-size: 43px;
+    margin: auto auto 22px;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#f4d17c,#a87527);
+    box-shadow: 0 0 40px #d5a84c55;
+}
+
+.tag {
+    display: inline-block;
+    color: #f3d18a;
+    background: #41331e;
+    border: 1px solid #80612f;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(34px,7vw,57px);
+    font-weight: 900;
+    margin-bottom: 18px;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: #edc36e;
+}
+
+.hero p {
+    color: #c1b9aa;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 580px;
+    margin: auto;
+}
+
+.gold-text {
+    color: #f3d18a;
+    font-weight: bold;
+}
+
+/* SERVICE */
+.service {
+    margin-top: 25px;
+    padding: 28px;
+    background: #111c2e;
+    border: 1px solid #293b57;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.service h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #a7b7ce;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.service-highlight {
+    color: #eec879;
+    font-weight: bold;
+}
+
+/* CONTACT */
+.contact {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.contact-desc {
+    color: #91a3bd;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    background: #111c2e;
+    border: 1px solid #293b57;
+    border-radius: 16px;
+    transition: .25s;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    border-color: #438aff;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    font-size: 23px;
+    background: #1b3559;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info small {
+    display: block;
+    color: #8295b1;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.contact-info b {
+    font-size: 14px;
+}
+
+/* DOWNLOAD */
+.download-section {
+    margin: 55px auto 0;
+    padding: 35px 28px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid #315a91;
+    background: linear-gradient(145deg,#172c4a,#101a2d);
+    box-shadow: 0 20px 70px #0006;
+}
+
+.download-section h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.download-section p {
+    color: #a8bad3;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 21px;
+    margin-top: 27px;
+    border-radius: 15px;
+    background: linear-gradient(100deg,#2378ff,#655bff);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 35px #267aff66;
+    transition: .25s;
+}
+
+.download:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 45px #267aff99;
+}
+
+.download-icon {
+    font-size: 25px;
+}
+
+.download-note {
+    margin-top: 15px;
+    font-size: 12px !important;
+    color: #8299b9 !important;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 35px 0;
+    color: #687c99;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: #5798ff;
+}
+
+@media(max-width:600px) {
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .service {
+        padding: 24px 18px;
+    }
+
+    .download-section {
+        padding: 30px 19px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<nav>
+    <div class="brand">
+        NGHIA <span>DNS PRO</span>
+    </div>
+
+    <div class="status">
+        ● SYSTEM ONLINE
+    </div>
+</nav>
+
+<!-- LOCKET GOLD ADVERTISEMENT -->
+<section class="hero">
+
+    <div class="gold-icon">👑</div>
+
+    <div class="tag">
+        PREMIUM SERVICE
+    </div>
+
+    <h1>
+        LOCKET <span>GOLD</span>
+    </h1>
+
+    <p>
+        Nâng tầm trải nghiệm Locket với
+        <span class="gold-text">Locket Gold</span>.
+        Khám phá những tiện ích cao cấp,
+        lưu giữ khoảnh khắc và chia sẻ hình ảnh
+        cùng bạn bè theo cách riêng của bạn.
+        <br><br>
+        <span class="gold-text">
+            Liên hệ ngay để được tư vấn dịch vụ!
+        </span>
+    </p>
+
+</section>
+
+<!-- SERVICE INFO -->
+<section class="service">
+
+    <h2>✨ DỊCH VỤ LOCKET</h2>
+
+    <p>
+        NGHIA cung cấp dịch vụ liên quan đến
+        <span class="service-highlight">Locket Gold</span>
+        với sự hỗ trợ tận tình.
+        <br>
+        Mọi thắc mắc và thông tin chi tiết,
+        vui lòng liên hệ qua Facebook hoặc Zalo.
+    </p>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+
+    <h2>LIÊN HỆ VỚI TÔI</h2>
+
+    <p class="contact-desc">
+        Kết nối trực tiếp để được hỗ trợ
+    </p>
+
+    <div class="contact-list">
+
+        <a class="contact-item"
+           href="https://www.facebook.com/trong.nghia.97616"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="contact-icon">📘</div>
+
+            <div class="contact-info">
+                <small>FACEBOOK</small>
+                <b>NGHIA</b>
+            </div>
+
+        </a>
+
+        <a class="contact-item"
+           href="https://zalo.me/0786210207"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="contact-icon">💬</div>
+
+            <div class="contact-info">
+                <small>ZALO</small>
+                <b>0786210207</b>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- DNS DOWNLOAD AT THE BOTTOM -->
+<section class="download-section">
+
+    <h2>🛡️ NGHIA DNS PRO</h2>
+
+    <p>
+      LƯU Ý : sao chép link dán vào safari trước rồi mới nhấn download
+    </p>
+
+    <a class="download"
+       href="./NGHIA_DNS.mobileconfig">
+
+        <span class="download-icon">↓</span>
+      DOWNLOAD
+
+    </a>
+
+    <p class="download-note">
+        NGHIA ĐZ
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <b>NGHIA <span>DNS PRO</span></b>
+
+    <br>
+
+    Powered by NGHIA ĐZ
+
+    <br>
+
+    © 2026 NGHIA DNS PRO
+
+</footer>
+
 </div>
-<p class="small">NGHIA DNS PRO · Powered by NextDNS. Tính năng lọc phụ thuộc cấu hình và giới hạn gói NextDNS.</p>
-</main></body></html>
+
+</body>
+</html>
