@@ -5,7 +5,7 @@
 	<key>PayloadDisplayName</key>
 	<string>NGHIA DNS PRO</string>
 	<key>PayloadDescription</key>
-	<string>NGHIA DNS PRO - NextDNS configuration</string>
+	<string>DNS BY NGHIA </string>
 	<key>PayloadIdentifier</key>
 	<string>com.nghia.dnspro.profile</string>
 	<key>PayloadScope</key>
