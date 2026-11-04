@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>NGHIA DEPTRAI </title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d19;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #176bff;
+    filter: blur(180px);
+    opacity: .17;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.container {
+    width: min(850px, 92%);
+    margin: auto;
+}
+
+/* HEADER */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.brand {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: #438aff;
+}
+
+.status {
+    color: #6df0b0;
+    font-size: 11px;
+    background: #102b25;
+    padding: 9px 14px;
+    border-radius: 30px;
+}
+
+/* LOCKET HERO */
+.hero {
+    margin-top: 25px;
+    padding: 45px 30px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid #51442b;
+    background:
+        radial-gradient(circle at top, #5c4624 0%, transparent 55%),
+        linear-gradient(145deg,#211e19,#111a29);
+    box-shadow: 0 20px 65px #0005;
+}
+
+.gold-icon {
+    width: 85px;
+    height: 85px;
+    display: grid;
+    place-items: center;
+    font-size: 43px;
+    margin: auto auto 22px;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#f4d17c,#a87527);
+    box-shadow: 0 0 40px #d5a84c55;
+}
+
+.tag {
+    display: inline-block;
+    color: #f3d18a;
+    background: #41331e;
+    border: 1px solid #80612f;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(34px,7vw,57px);
+    font-weight: 900;
+    margin-bottom: 18px;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: #edc36e;
+}
+
+.hero p {
+    color: #c1b9aa;
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 580px;
+    margin: auto;
+}
+
+.gold-text {
+    color: #f3d18a;
+    font-weight: bold;
+}
+
+/* SERVICE */
+.service {
+    margin-top: 25px;
+    padding: 28px;
+    background: #111c2e;
+    border: 1px solid #293b57;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.service h2 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #a7b7ce;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.service-highlight {
+    color: #eec879;
+    font-weight: bold;
+}
+
+/* CONTACT */
+.contact {
+    margin-top: 55px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.contact-desc {
+    color: #91a3bd;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    background: #111c2e;
+    border: 1px solid #293b57;
+    border-radius: 16px;
+    transition: .25s;
+}
+
+.contact-item:hover {
+    transform: translateY(-4px);
+    border-color: #438aff;
+}
+
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    font-size: 23px;
+    background: #1b3559;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info small {
+    display: block;
+    color: #8295b1;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.contact-info b {
+    font-size: 14px;
+}
+
+/* DOWNLOAD */
+.download-section {
+    margin: 55px auto 0;
+    padding: 35px 28px;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid #315a91;
+    background: linear-gradient(145deg,#172c4a,#101a2d);
+    box-shadow: 0 20px 70px #0006;
+}
+
+.download-section h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.download-section p {
+    color: #a8bad3;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    padding: 21px;
+    margin-top: 27px;
+    border-radius: 15px;
+    background: linear-gradient(100deg,#2378ff,#655bff);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 35px #267aff66;
+    transition: .25s;
+}
+
+.download:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 45px #267aff99;
+}
+
+.download-icon {
+    font-size: 25px;
+}
+
+.download-note {
+    margin-top: 15px;
+    font-size: 12px !important;
+    color: #8299b9 !important;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 35px 0;
+    color: #687c99;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: #5798ff;
+}
+
+@media(max-width:600px) {
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 35px 20px;
+    }
+
+    .service {
+        padding: 24px 18px;
+    }
+
+    .download-section {
+        padding: 30px 19px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+}
+
+/* PASSWORD DOWNLOAD + ADMIN */
+.dns-form{margin-top:22px;text-align:left}
+.dns-form label{display:block;color:#c8d5e7;font-size:13px;margin:12px 0 7px}
+.dns-form input{width:100%;padding:16px;border-radius:12px;border:1px solid #3b5272;background:#0b1526;color:#fff;font-size:16px;outline:none}
+.dns-form input:focus{border-color:#438aff}
+.dns-form button{width:100%;border:0;padding:18px;margin-top:14px;border-radius:14px;background:linear-gradient(100deg,#2378ff,#655bff);color:#fff;font-size:16px;font-weight:900;letter-spacing:.5px;cursor:pointer}
+.dns-form button:disabled{opacity:.6;cursor:wait}
+.dns-message{display:none;margin-top:14px;padding:13px;border-radius:11px;font-size:13px;line-height:1.6;overflow-wrap:anywhere;text-align:left}
+.dns-message.ok{display:block;background:#102b25;color:#8ef0c0}
+.dns-message.err{display:block;background:#3b1d2a;color:#ffb9c4}
+.admin-link{display:inline-block;margin-top:22px;color:#91baff;font-size:13px;text-decoration:underline;cursor:pointer}
+.admin-panel{display:none;margin-top:18px;padding:18px;border:1px solid #3b5272;border-radius:14px;background:#0d1728;text-align:left}
+.admin-panel h3{font-size:18px;margin-bottom:8px}
+.admin-panel p{color:#9eb0c9;font-size:12px;line-height:1.6;margin-bottom:12px}
+.admin-panel input{width:100%;padding:13px;border-radius:10px;border:1px solid #3b5272;background:#08111f;color:#fff;margin:6px 0 12px}
+.admin-panel button{width:100%;padding:13px;border:0;border-radius:10px;margin-top:9px;background:#2878ff;color:#fff;font-weight:bold;cursor:pointer}
+.admin-panel button.secondary{background:#263b58}
+.admin-panel button:disabled{opacity:.6;cursor:wait}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+<nav>
+    <div class="brand">
+        NGHIA <span>DNS</span>
+    </div>
+
+    <div class="status">
+        ● SYSTEM ONLINE
+    </div>
+</nav>
+
+<!-- LOCKET GOLD ADVERTISEMENT -->
+<section class="hero">
+
+    <div class="gold-icon">👑</div>
+
+    <div class="tag">
+        PREMIUM SERVICE
+    </div>
+
+    <h1>
+        LOCKET <span>GOLD</span>
+    </h1>
+
+    <p>
+        Nâng tầm trải nghiệm Locket với
+        <span class="gold-text">Locket Gold</span>.
+        Khám phá những tiện ích cao cấp,
+        lưu giữ khoảnh khắc và chia sẻ hình ảnh
+        cùng bạn bè theo cách riêng của bạn.
+        <br><br>
+        <span class="gold-text">
+            Liên hệ ngay để được tư vấn dịch vụ!
+        </span>
+    </p>
+
+</section>
+
+<!-- SERVICE INFO -->
+<section class="service">
+
+    <h2>✨ DỊCH VỤ LOCKET</h2>
+
+    <p>
+        NGHIA cung cấp dịch vụ liên quan đến
+        <span class="service-highlight">Locket Gold</span>
+        với sự hỗ trợ tận tình.
+        <br>
+        Mọi thắc mắc và thông tin chi tiết,
+        vui lòng liên hệ qua Facebook hoặc Zalo.
+    </p>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+
+    <h2>LIÊN HỆ VỚI TÔI</h2>
+
+    <p class="contact-desc">
+        Kết nối trực tiếp để được hỗ trợ
+    </p>
+
+    <div class="contact-list">
+
+        <a class="contact-item"
+           href="https://www.facebook.com/trong.nghia.97616"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="contact-icon">📘</div>
+
+            <div class="contact-info">
+                <small>FACEBOOK</small>
+                <b>NGHIA</b>
+            </div>
+
+        </a>
+
+        <a class="contact-item"
+           href="https://zalo.me/0786210207"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="contact-icon">💬</div>
+
+            <div class="contact-info">
+                <small>ZALO</small>
+                <b>0786210207</b>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- DNS DOWNLOAD AT THE BOTTOM -->
+<section class="download-section">
+
+    <h2>🛡️ NGHIA DNS PRO</h2>
+
+    <p>
+      LƯU Ý : sao chép link dán vào safari trước rồi mới nhấn download
+    </p>
+
+    <form class="dns-form" id="dnsDownloadForm">
+        <label for="dnsPassword">MẬT KHẨU TẢI DNS</label>
+        <input id="dnsPassword" type="password" minlength="8" maxlength="128"
+               autocomplete="current-password" placeholder="Nhập mật khẩu hiện tại" required>
+        <button id="dnsDownloadButton" type="submit">
+            <span class="download-icon">↓</span> DOWNLOAD
+        </button>
+    </form>
+    <div id="dnsDownloadMessage" class="dns-message" role="status" aria-live="polite"></div>
+
+    <span class="admin-link" id="adminToggle">QUẢN TRỊ VIÊN</span>
+    <div class="admin-panel" id="adminPanel">
+        <h3>🔐 KHU VỰC QUẢN TRỊ</h3>
+        <p>Nhập ADMIN_SECRET đã thiết lập trong Supabase Secrets. Không chia sẻ khóa này và không lưu nó vào mã nguồn.</p>
+        <label for="adminSecret">ADMIN_SECRET</label>
+        <input id="adminSecret" type="password" autocomplete="off" placeholder="Khóa quản trị">
+        <label for="adminNewPassword">MẬT KHẨU MỚI</label>
+        <input id="adminNewPassword" type="password" minlength="8" maxlength="128" autocomplete="new-password" placeholder="Ít nhất 8 ký tự">
+        <button type="button" id="adminSetButton">ĐẶT MẬT KHẨU</button>
+        <button type="button" class="secondary" id="adminGenerateButton">TẠO MẬT KHẨU NGẪU NHIÊN</button>
+        <button type="button" class="secondary" id="adminInitButton">KHỞI TẠO MẬT KHẨU LẦN ĐẦU</button>
+        <div id="adminMessage" class="dns-message" role="status" aria-live="polite"></div>
+    </div>
+
+    <p class="download-note">
+        NGHIA ĐZ
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <b>NGHIA <span>DNS PRO</span></b>
+
+    <br>
+
+    Powered by NGHIA ĐZ
+
+    <br>
+
+    © 2026 NGHIA DNS PRO
+
+</footer>
+
+</div>
+
+
+<script>
+"use strict";
+
+// Chỉ dùng Project URL và Publishable key ở frontend.
+// Tuyệt đối không đưa service_role key hoặc các secret vào file này.
+const SUPABASE_URL = "https://ppbzmqkkvaersaoxlfhu.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_a5fExAMjmPryVizH845NVw_667Fbju3";
+const DNS_FUNCTION_URL = `${SUPABASE_URL}/functions/v1/dns-manager`;
+
+async function callDnsFunction(payload, adminSecret = "") {
+    const headers = {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_PUBLISHABLE_KEY
+    };
+    if (adminSecret) headers["x-admin-secret"] = adminSecret;
+
+    const response = await fetch(DNS_FUNCTION_URL, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload)
+    });
+
+    let data;
+    try {
+        data = await response.json();
+    } catch {
+        throw new Error("Phản hồi từ máy chủ không hợp lệ.");
+    }
+    if (!response.ok) {
+        throw new Error(data.error || `Yêu cầu thất bại (${response.status}).`);
+    }
+    return data;
+}
+
+function setDnsMessage(element, message, success) {
+    element.textContent = message;
+    element.className = `dns-message ${success ? "ok" : "err"}`;
+}
+
+const dnsDownloadForm = document.getElementById("dnsDownloadForm");
+const dnsDownloadButton = document.getElementById("dnsDownloadButton");
+const dnsDownloadMessage = document.getElementById("dnsDownloadMessage");
+
+dnsDownloadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const password = document.getElementById("dnsPassword").value;
+    dnsDownloadButton.disabled = true;
+    dnsDownloadButton.textContent = "ĐANG XÁC THỰC...";
+    dnsDownloadMessage.className = "dns-message";
+
+    try {
+        const result = await callDnsFunction({ action: "download", password });
+        if (!result.success || !result.downloadUrl) {
+            throw new Error("Không nhận được liên kết tải file.");
+        }
+
+        setDnsMessage(
+            dnsDownloadMessage,
+            result.telegramSent === false
+                ? "Đã xác thực và tạo liên kết tải. Tuy nhiên Telegram chưa gửi được thông báo; quản trị viên cần kiểm tra."
+                : "Mật khẩu hợp lệ. Đang mở file cấu hình DNS...",
+            true
+        );
+
+        // Liên kết tải do Supabase Storage tạo, có thời hạn 120 giây.
+        window.location.assign(result.downloadUrl);
+        dnsDownloadForm.reset();
+    } catch (error) {
+        setDnsMessage(dnsDownloadMessage, error.message || "Có lỗi xảy ra, vui lòng thử lại.", false);
+    } finally {
+        dnsDownloadButton.disabled = false;
+        dnsDownloadButton.innerHTML = '<span class="download-icon">↓</span> DOWNLOAD';
+    }
+});
+
+const adminToggle = document.getElementById("adminToggle");
+const adminPanel = document.getElementById("adminPanel");
+adminToggle.addEventListener("click", () => {
+    adminPanel.style.display = adminPanel.style.display === "block" ? "none" : "block";
+});
+
+const adminMessage = document.getElementById("adminMessage");
+const adminSecretInput = document.getElementById("adminSecret");
+const adminNewPasswordInput = document.getElementById("adminNewPassword");
+
+async function performAdminAction(action) {
+    const adminSecret = adminSecretInput.value.trim();
+    if (!adminSecret) {
+        setDnsMessage(adminMessage, "Vui lòng nhập ADMIN_SECRET.", false);
+        return;
+    }
+
+    const payload = { action };
+    if (action !== "admin_generate") {
+        const newPassword = adminNewPasswordInput.value;
+        if (newPassword.length < 8 || newPassword.length > 128) {
+            setDnsMessage(adminMessage, "Mật khẩu phải có từ 8 đến 128 ký tự.", false);
+            return;
+        }
+        payload.newPassword = newPassword;
+    }
+
+    const adminButtons = [
+        document.getElementById("adminSetButton"),
+        document.getElementById("adminGenerateButton"),
+        document.getElementById("adminInitButton")
+    ];
+    adminButtons.forEach(button => button.disabled = true);
+    adminMessage.className = "dns-message";
+
+    try {
+        const result = await callDnsFunction(payload, adminSecret);
+        if (!result.success) throw new Error("Không thể cập nhật mật khẩu.");
+
+        if (result.password) {
+            setDnsMessage(
+                adminMessage,
+                `Thành công! Mật khẩu mới: ${result.password}. Hãy lưu lại. Hệ thống cũng gửi thông báo Telegram nếu bot hoạt động.`,
+                true
+            );
+        } else {
+            setDnsMessage(adminMessage, "Đã cập nhật mật khẩu.", true);
+        }
+        adminNewPasswordInput.value = "";
+    } catch (error) {
+        setDnsMessage(adminMessage, error.message || "Không thể thực hiện thao tác.", false);
+    } finally {
+        adminButtons.forEach(button => button.disabled = false);
+    }
+}
+
+document.getElementById("adminSetButton").addEventListener("click", () => performAdminAction("admin_set"));
+document.getElementById("adminGenerateButton").addEventListener("click", () => performAdminAction("admin_generate"));
+document.getElementById("adminInitButton").addEventListener("click", () => performAdminAction("init"));
+</script>
+
+</body>
+</html>
